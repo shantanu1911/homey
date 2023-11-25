@@ -57,7 +57,7 @@ public class PropertyService {
         return response;
     }
 
-    public ResponseModel updateProduct(UUID propertyId, Property property, String userName) {
+    public ResponseModel updateProperty(UUID propertyId, Property property, String userName) {
         ResponseModel response = new ResponseModel();
         try {
             propertyRepository.findById(propertyId).ifPresent(

@@ -38,7 +38,7 @@ public class PropertyController {
     public ResponseEntity<ResponseModel> updateProperty(@PathVariable UUID propertyId,
                                                         @RequestBody Property property,
                                                         Principal principal) {
-        return new ResponseEntity<>(propertyService.updateProduct(propertyId, property, principal.getName()), HttpStatus.OK);
+        return new ResponseEntity<>(propertyService.updateProperty(propertyId, property, principal.getName()), HttpStatus.OK);
     }
 
     @DeleteMapping("/{propertyId}")
