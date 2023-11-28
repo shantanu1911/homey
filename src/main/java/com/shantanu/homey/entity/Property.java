@@ -17,21 +17,13 @@ import java.util.UUID;
 public class Property {
     @Id
     private UUID id;
-    private String projectName;
-    private String constructorName;
+    private String name;
     private String address;
-    private String eircode;
+    private String yearMade;
     private String description;
     private String postalCode;
     private BigDecimal price;
-    private BigDecimal bookingAmount;
-    private BigDecimal area;
-    private LocalDate availableFrom;
-    private String energyRatings;
-    private Integer availableUnits;
-    private Integer bedrooms;
-    private Integer bathrooms;
-    private List<String> amenities;
+    private List<String> features;
     private List<String> images;
     private String propertyType;
     private String status;

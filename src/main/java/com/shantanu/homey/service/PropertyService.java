@@ -85,17 +85,11 @@ public class PropertyService {
         if (nonNull(updatedProp.getAddress()))
             property.setAddress(updatedProp.getAddress());
 
-        if (nonNull(updatedProp.getArea()))
-            property.setArea(updatedProp.getArea());
+        if (nonNull(updatedProp.getFeatures()))
+            property.setFeatures(updatedProp.getFeatures());
 
-        if (nonNull(updatedProp.getAmenities()))
-            property.setAmenities(updatedProp.getAmenities());
-
-        if (nonNull(updatedProp.getConstructorName()))
-            property.setConstructorName(updatedProp.getConstructorName());
-
-        if (nonNull(updatedProp.getBookingAmount()))
-            property.setBookingAmount(updatedProp.getBookingAmount());
+        if (nonNull(updatedProp.getName()))
+            property.setName(updatedProp.getName());
 
         if (nonNull(updatedProp.getPrice()))
             property.setPrice(updatedProp.getPrice());
@@ -103,23 +97,11 @@ public class PropertyService {
         if (nonNull(updatedProp.getPostalCode()))
             property.setPostalCode(updatedProp.getPostalCode());
 
-        if (nonNull(updatedProp.getEircode()))
-            property.setEircode(updatedProp.getEircode());
+        if (nonNull(updatedProp.getYearMade()))
+            property.setYearMade(updatedProp.getYearMade());
 
         if (nonNull(updatedProp.getDescription()))
             property.setDescription(updatedProp.getDescription());
-
-        if (nonNull(updatedProp.getAvailableFrom()))
-            property.setAvailableFrom(updatedProp.getAvailableFrom());
-
-        if (nonNull(updatedProp.getEnergyRatings()))
-            property.setEnergyRatings(updatedProp.getEnergyRatings());
-
-        if (nonNull(updatedProp.getBedrooms()))
-            property.setBedrooms(updatedProp.getBedrooms());
-
-        if (nonNull(updatedProp.getBathrooms()))
-            property.setBathrooms(updatedProp.getBathrooms());
 
         property.setModifiedOn(LocalDateTime.now());
     }
@@ -182,9 +164,9 @@ public class PropertyService {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("honeyspace.app@gmail.com");
         message.setTo(productUser.getEmail());
-        message.setSubject("Enquiry for your cataloged property : " + property.getConstructorName());
+        message.setSubject("Enquiry for your cataloged property : " + property.getName());
         message.setText("A person has made an enquiry for your property : "
-                + property.getProjectName() +
+                + property.getName() +
                 ", kindly Email the potential buyer of your property. Here Is The Details Of Enquirer. " +
                 " Name: " + enquiryUser.getFirstname() + " " + enquiryUser.getLastname() + " " +
                 " Email ID: " + enquiryUser.getEmail());
