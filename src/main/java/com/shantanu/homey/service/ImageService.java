@@ -24,7 +24,7 @@ public class ImageService {
     @Autowired
     AwsSessionCredentials awsSessionCredentials;
     @Autowired
-    ProductService propertyService;
+    PropertyService propertyService;
 
     private String propertyId;
 

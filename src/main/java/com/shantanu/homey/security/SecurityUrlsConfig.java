@@ -29,7 +29,6 @@ public class SecurityUrlsConfig {
         http.cors().configurationSource(request -> {
             var cors = new CorsConfiguration();
             cors.setAllowedOrigins(List.of("http://localhost:3000", "http://127.0.0.1:3000",
-                    "http://103.226.31.73:3000", "http://honeyspacefe.eu-west-1.elasticbeanstalk.com",
                     "http://homeyfe.s3-website-eu-west-1.amazonaws.com"));
             cors.setAllowedMethods(List.of("GET","POST", "PUT", "DELETE", "OPTIONS"));
             cors.setAllowedHeaders(List.of("*"));
@@ -39,7 +38,7 @@ public class SecurityUrlsConfig {
                 .disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/api/v1/master","/api/v1/auth/login",
-                        "/api/v1/auth/register","/api/v1/property","/test","/getMessage")
+                        "/api/v1/auth/register","/api/v1/property","/","/getMessage")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
