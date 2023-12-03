@@ -162,14 +162,14 @@ public class PropertyService {
 
     private void sendEmail(User productUser, User enquiryUser, Property property) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("honeyspace.app@gmail.com");
+        message.setFrom("shantanumalviya19@gmail.com");
         message.setTo(productUser.getEmail());
-        message.setSubject("Enquiry for your cataloged property : " + property.getName());
-        message.setText("A person has made an enquiry for your property : "
+        message.setSubject("Enquiry for your cataloged construction work : " + property.getName());
+        message.setText("A contactor has shown an interest on your added enquiry for your property : "
                 + property.getName() +
-                ", kindly Email the potential buyer of your property. Here Is The Details Of Enquirer. " +
+                ", \n\n kindly Email the potential contractor for discussing the requirement details and quotation. \n\nHere Is The Details Of Enquirer. " +
                 " Name: " + enquiryUser.getFirstname() + " " + enquiryUser.getLastname() + " " +
-                " Email ID: " + enquiryUser.getEmail());
+                " Email ID: " + enquiryUser.getEmail()+" \n\n Thanks & Regards \nTeam Homey");
         this.emailSender.send(message);
     }
 }
