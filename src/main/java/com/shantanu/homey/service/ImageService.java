@@ -2,6 +2,7 @@ package com.shantanu.homey.service;
 
 import com.shantanu.homey.model.ResponseModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import software.amazon.awssdk.auth.credentials.AwsSessionCredentials;
@@ -20,7 +21,8 @@ import java.util.UUID;
 
 @Service
 public class ImageService {
-    private static final String BUCKET = "x22103228-cpp";
+    @Value("${s3BucketName}")
+    private String BUCKET ;
     @Autowired
     AwsSessionCredentials awsSessionCredentials;
     @Autowired
